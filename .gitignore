@@ -1,0 +1,13 @@
+Data/
+artifacts/
+*.parquet
+*.csv
+*.zip
+*.gz
+*.bz2
+*.xz
+*.npz
+*.npy
+*.pkl
+*.pt
+*.h5
