@@ -1,0 +1,42 @@
+data_dir: /Users/arjunkohli/Downloads/js_rmf_pipeline/Data/jane-street-real-time-market-data-forecasting
+artifacts_dir: artifacts
+
+target: responder_6
+
+# Partitions to use (adjust if you want more/less data)
+use_partitions: [7,8,9]
+
+# Cross-validation
+n_folds: 5
+purge_gap_time_ids: 5
+random_state: 42
+
+lgbm_params:
+  boosting_type: gbdt
+  objective: regression
+
+  # Tree growth
+  n_estimators: 200         # enough to learn signal, still fast
+  learning_rate: 0.1
+  num_leaves: 31
+  max_depth: 8
+  max_bin: 63
+
+  # Stability
+  min_data_in_leaf: 100
+  min_sum_hessian_in_leaf: 1e-3
+  min_gain_to_split: 0.0
+
+  # Subsampling
+  feature_fraction: 0.7
+  bagging_fraction: 0.7
+  bagging_freq: 1
+
+  # Regularization
+  lambda_l1: 0.0
+  lambda_l2: 0.0
+
+  # Parallelism + algo
+  n_jobs: -1
+  force_col_wise: true
+  verbosity: -1
