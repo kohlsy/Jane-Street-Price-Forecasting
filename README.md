@@ -1,6 +1,6 @@
 # Jane Street RMF – Leakage‑Safe Rolling‑CV Pipeline (LightGBM + Polars)
 
-This repo gives you a clean, interview‑ready pipeline for the **Jane Street Real-Time Market Data Forecasting** dataset.
+This repo is a clean, interview‑ready pipeline for the **Jane Street Real-Time Market Data Forecasting** dataset.
 It uses **Polars** for fast IO/transforms and **LightGBM** with a **time‑aware rolling CV** + **purge gap** to avoid leakage.
 
 ## Quickstart
